@@ -1,0 +1,36 @@
+version: 4.0.78
+steps:
+  - prompt: Click on "Store" in the header.
+    commands:
+      - command: hover-text
+        text: Store
+        description: link in the header
+        action: click
+  - prompt: Assert that the store page loads fully.
+    commands:
+      - command: assert
+        expect: Membership section is visible on the store page
+  - prompt: Try to add an item to the cart.
+    commands:
+      - command: hover-text
+        text: Subscribe
+        description: button for Premium membership
+        action: click
+  - prompt: Try to add an item to the cart.
+    commands:
+      - command: hover-text
+        text: Login with Google
+        description: button to log in with Google
+        action: click
+  - prompt: Try to add an item to the cart.
+    commands:
+      - command: type
+        text: testuser@example.com
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: password123
+      - command: press-keys
+        keys:
+          - enter
