@@ -1,0 +1,22 @@
+version: 4.0.78
+steps:
+  - prompt: Click "Play vs Bots".
+    commands:
+      - command: hover-text
+        text: Play vs Bots
+        description: button to start a game against bots
+        action: click
+  - prompt: Assert that a new game screen appears and is interactive.
+    commands:
+      - command: assert
+        expect: the game board is visible and interactive
+  - prompt: >-
+      Attempt to start the game and assert it begins without errors.  # Use the
+      content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Play vs Bots
+        description: button to start a game against bots
+        action: click
+      - command: assert
+        expect: the game board is visible and interactive
