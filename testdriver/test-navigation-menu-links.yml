@@ -1,0 +1,30 @@
+version: 4.0.78
+steps:
+  - prompt: Click on "Lobby" in the header.
+    commands:
+      - command: hover-text
+        text: Lobby
+        description: link in the header
+        action: click
+  - prompt: Assert that the lobby page loads with available games.
+    commands:
+      - command: assert
+        expect: available games are listed
+  - prompt: Return to the homepage.
+    commands:
+      - command: hover-text
+        text: Home
+        description: link in the header
+        action: click
+  - prompt: Click on "Leaderboards".
+    commands:
+      - command: hover-text
+        text: Leaderboards
+        description: link in the header
+        action: click
+  - prompt: >-
+      Assert the leaderboards page shows correct data.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: leaderboard data is displayed
