@@ -1,0 +1,10 @@
+version: 4.0.78
+steps:
+  - prompt: Click "Privacy" in the footer.
+    commands: []
+  - prompt: Assert that the privacy policy page loads correctly.
+    commands: []
+  - prompt: >-
+      Verify that text content is present.  # Use the content of the file from
+      the environment
+    commands: []
