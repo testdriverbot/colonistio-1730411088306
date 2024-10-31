@@ -1,0 +1,26 @@
+version: 4.0.78
+steps:
+  - prompt: Click on "English" in the dropdown at the bottom.
+    commands:
+      - command: hover-text
+        text: English
+        description: language selection at the bottom
+        action: click
+  - prompt: Change the language.
+    commands:
+      - command: hover-text
+        text: English (English)
+        description: language dropdown in the Change Language dialog
+        action: click
+  - prompt: Change the language.
+    commands:
+      - command: hover-text
+        text: Spanish (Español)
+        description: select Spanish from the language dropdown
+        action: click
+  - prompt: >-
+      Assert that the page reloads in the selected language.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: the page displays text in Spanish
