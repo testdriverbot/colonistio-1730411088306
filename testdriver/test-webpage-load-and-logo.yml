@@ -1,0 +1,18 @@
+version: 4.0.78
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: hover-text
+        text: Login
+        description: login button in the header
+        action: click
+  - prompt: Assert that the webpage loads fully.
+    commands:
+      - command: assert
+        expect: the login modal is visible
+  - prompt: >-
+      Assert that the Colonist logo is displayed at the top left.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the Colonist logo is visible at the top left
